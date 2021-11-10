@@ -1,2 +1,16 @@
 # sql_projektSQL
-Pliki [jezyk.txt, panstwa.txt, uzytkownicy.txt] to dane do projektu. Należy wykonać pięć zapytań do bazy danych, a następnie zapisać je jako widoki [V1, V2...]
+Pliki [jezyk.txt, panstwa.txt, uzytkownicy.txt] to dane do projektu. Należy wykonać pięć zapytań do bazy danych, a następnie zapisać je jako widoki [V1, V2...].
+
+[Arkusz](https://arkusze.pl/maturalne/informatyka-2020-czerwiec-matura-rozszerzona-2.pdf) - Link do arkusza z zadaniami
+
+## zapytania
+
+1. V1
+```sql
+SELECT...
+```
+
+2.
+```sql
+SELECT...
+```
