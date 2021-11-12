@@ -10,7 +10,7 @@ Pliki [jezyk.txt, panstwa.txt, uzytkownicy.txt] to dane do projektu. Należy wyk
 SELECT jezyki.Rodzina AS Rodzina, COUNT(jezyki.Jezyk) AS Jezyk FROM jezyki GROUP BY Rodzina ORDER BY Jezyk DESC 
 ```
 
-2.
+2. V2
 ```sql
-SELECT...
+SELECT COUNT(DISTINCT uzytkownicy.Jezyk) AS 'Liczba jezykow' FROM uzytkownicy WHERE uzytkownicy.jezyk NOT IN (SELECT uzytkownicy.Jezyk FROM uzytkownicy WHERE uzytkownicy.Urzedowy LIKE "tak") 
 ```
