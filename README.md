@@ -7,10 +7,26 @@ Pliki [jezyk.txt, panstwa.txt, uzytkownicy.txt] to dane do projektu. Należy wyk
 
 1. V1
 ```sql
-SELECT jezyki.Rodzina AS Rodzina, COUNT(jezyki.Jezyk) AS Jezyk FROM jezyki GROUP BY Rodzina ORDER BY Jezyk DESC 
+SELECT jezyki.Rodzina AS Rodzina, COUNT(jezyki.Jezyk) AS Jezyk 
+FROM jezyki 
+GROUP BY Rodzina 
+ORDER BY Jezyk DESC 
 ```
 
 2. V2
 ```sql
-SELECT COUNT(DISTINCT uzytkownicy.Jezyk) AS 'Liczba jezykow' FROM uzytkownicy WHERE uzytkownicy.jezyk NOT IN (SELECT uzytkownicy.Jezyk FROM uzytkownicy WHERE uzytkownicy.Urzedowy LIKE "tak") 
+SELECT COUNT(DISTINCT uzytkownicy.Jezyk) AS 'Liczba jezykow' 
+FROM uzytkownicy WHERE uzytkownicy.jezyk NOT IN 
+(SELECT uzytkownicy.Jezyk FROM uzytkownicy WHERE uzytkownicy.Urzedowy LIKE "tak") 
+```
+
+3. V3
+```sql
+SELECT jezyki.Jezyk AS Jezyk, COUNT(DISTINCT panstwa.Kontynent) AS Kontynent 
+FROM jezyki JOIN uzytkownicy
+ON jezyki.Jezyk = uzytkownicy.Jezyk
+JOIN panstwa 
+ON uzytkownicy.Panstwo = panstwa.Panstwo
+GROUP BY Jezyk
+HAVING Kontynent >= 4
 ```
