@@ -7,7 +7,7 @@ Pliki [jezyk.txt, panstwa.txt, uzytkownicy.txt] to dane do projektu. Należy wyk
 
 1. V1
 ```sql
-SELECT...
+SELECT jezyki.Rodzina AS Rodzina, COUNT(jezyki.Jezyk) AS Jezyk FROM jezyki GROUP BY Rodzina ORDER BY Jezyk DESC 
 ```
 
 2.
