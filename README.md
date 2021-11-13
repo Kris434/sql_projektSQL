@@ -30,3 +30,17 @@ ON uzytkownicy.Panstwo = panstwa.Panstwo
 GROUP BY Jezyk
 HAVING Kontynent >= 4
 ```
+
+4. V4
+```sql
+SELECT jezyki.Jezyk AS Jezyk, jezyki.Rodzina AS Rodzina, ROUND(SUM(uzytkownicy.Uzytkownicy), 1) AS Uzytkownicy
+FROM jezyki JOIN uzytkownicy
+ON jezyki.Jezyk = uzytkownicy.Jezyk
+JOIN panstwa ON panstwa.Panstwo = uzytkownicy.Panstwo
+WHERE panstwa.Kontynent LIKE "Ameryka Polnocna" 
+	OR panstwa.Kontynent LIKE "Ameryka Poludniowa" 
+    AND jezyki.Rodzina != 'indoeuropejska'
+GROUP BY jezyki.Jezyk  
+ORDER BY `Uzytkownicy`  DESC
+LIMIT 6
+```
