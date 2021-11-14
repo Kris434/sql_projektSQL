@@ -37,10 +37,8 @@ SELECT jezyki.Jezyk AS Jezyk, jezyki.Rodzina AS Rodzina, ROUND(SUM(uzytkownicy.U
 FROM jezyki JOIN uzytkownicy
 ON jezyki.Jezyk = uzytkownicy.Jezyk
 JOIN panstwa ON panstwa.Panstwo = uzytkownicy.Panstwo
-WHERE panstwa.Kontynent LIKE "Ameryka Polnocna" 
-	OR panstwa.Kontynent LIKE "Ameryka Poludniowa" 
-	AND jezyki.Rodzina != 'indoeuropejska'
+WHERE panstwa.Kontynent LIKE "Ameryka Pol%" 
+	AND jezyki.Rodzina NOT LIKE 'indoeuropejska'
 GROUP BY jezyki.Jezyk  
-ORDER BY `Uzytkownicy`  DESC
-LIMIT 6
+ORDER BY `Uzytkownicy`  DESC LIMIT 6
 ```
