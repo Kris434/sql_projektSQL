@@ -42,3 +42,13 @@ WHERE panstwa.Kontynent LIKE "Ameryka Pol%"
 GROUP BY jezyki.Jezyk  
 ORDER BY `Uzytkownicy`  DESC LIMIT 6
 ```
+
+5. V5
+```sql
+SELECT panstwa.Panstwo AS Panstwo, jezyki.Jezyk AS Jezyk, ROUND(uzytkownicy.Uzytkownicy / panstwa.Populacja * 100, 2) AS Procent
+FROM panstwa JOIN uzytkownicy ON panstwa.Panstwo = uzytkownicy.Panstwo
+JOIN jezyki ON uzytkownicy.Jezyk = jezyki.Jezyk
+WHERE uzytkownicy.Urzedowy LIKE "nie" 
+	AND ROUND(uzytkownicy.Uzytkownicy / panstwa.Populacja * 100, 2) >= 30
+ORDER BY `Procent`  DESC;
+```
