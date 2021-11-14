@@ -45,13 +45,13 @@ ADD FOREIGN KEY (Jezyk) REFERENCES jezyki (Jezyk);
 
 
 /* Załadowanie danych z pliku o rozszerzeniu '.txt' do tabeli jezyki */
-LOAD DATA INFILE 'G://Dane/jezyki.txt' INTO TABLE jezyki IGNORE 1 LINES;
+LOAD DATA INFILE 'D://Dane/jezyki.txt' INTO TABLE jezyki IGNORE 1 LINES;
 
 /* Załadowanie danych z pliku o rozszerzeniu '.txt' do tabeli panstwa */
-LOAD DATA INFILE 'G://Dane/panstwa.txt' INTO TABLE panstwa IGNORE 1 LINES;
+LOAD DATA INFILE 'D://Dane/panstwa.txt' INTO TABLE panstwa IGNORE 1 LINES;
 
 /* Załadowanie danych z pliku o rozszerzeniu '.txt' do tabeli uzytkownicy. Dane do tej tabeli muszą zostać załadowane jako ostatnie, ponieważ znajdują się tutaj klucze obce */
-LOAD DATA INFILE 'G://Dane/uzytkownicy.txt' INTO TABLE uzytkownicy IGNORE 1 LINES;
+LOAD DATA INFILE 'D://Dane/uzytkownicy.txt' INTO TABLE uzytkownicy IGNORE 1 LINES;
 
 
 /* 
