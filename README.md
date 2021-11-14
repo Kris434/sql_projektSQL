@@ -39,7 +39,7 @@ ON jezyki.Jezyk = uzytkownicy.Jezyk
 JOIN panstwa ON panstwa.Panstwo = uzytkownicy.Panstwo
 WHERE panstwa.Kontynent LIKE "Ameryka Polnocna" 
 	OR panstwa.Kontynent LIKE "Ameryka Poludniowa" 
-    AND jezyki.Rodzina != 'indoeuropejska'
+	AND jezyki.Rodzina != 'indoeuropejska'
 GROUP BY jezyki.Jezyk  
 ORDER BY `Uzytkownicy`  DESC
 LIMIT 6
